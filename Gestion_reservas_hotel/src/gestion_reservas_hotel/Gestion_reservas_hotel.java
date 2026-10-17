@@ -12,11 +12,11 @@ public class Gestion_reservas_hotel {
         int seleccion;
         do {
             System.out.println("\n=== SISTEMA DE RESERVAS DEL HOTEL ===");
-            System.out.println("Ingrese tipo de usuario:\n<1> Usuario cliente.\n<2> Usuario personal.\n<0> Salir del programa.");
+            System.out.println("Ingrese tipo de usuario:\n<1> Usuario cliente.\n<2> Usuario personal.\n<3> Salir del programa.");
             seleccion = sc.nextInt(); sc.nextLine();
 
             switch (seleccion) {
-                case 0: 
+                case 3: 
                     System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
                     break;
                 case 1:
@@ -27,7 +27,7 @@ public class Gestion_reservas_hotel {
                     
                     break;
             }
-        } while (seleccion != 1);
+        } while (seleccion != 3);
     }
 }
 class Hotel {
