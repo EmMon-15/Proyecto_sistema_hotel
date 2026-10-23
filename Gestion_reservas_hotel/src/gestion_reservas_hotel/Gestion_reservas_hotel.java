@@ -8,7 +8,6 @@ public class Gestion_reservas_hotel {
     public static void main(String[] args) {
         
         Scanner sc = new Scanner(System.in);
-        Hotel hotel = new Hotel();
         int seleccion;
         do {
             System.out.println("\n=== SISTEMA DE RESERVAS DEL HOTEL ===");
@@ -20,7 +19,7 @@ public class Gestion_reservas_hotel {
                     System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
                     break;
                 case 1:
-                    Cliente cliente = new Cliente(hotel, sc);
+                    Cliente cliente = new Cliente();
                     cliente.mostrarMenu();
                     break;
                 case 2:
@@ -30,13 +29,4 @@ public class Gestion_reservas_hotel {
         } while (seleccion != 3);
     }
 }
-class Hotel {
 
-    public void mostrarHabitaciones(boolean soloDisponibles) {
-        if (soloDisponibles) {
-            System.out.println("Habitaciones disponibles: (pendiente)");
-        } else {
-            System.out.println("Todas las habitaciones: (pendiente)");
-        }
-    }
-}

@@ -3,16 +3,9 @@ package gestion_reservas_hotel;
 import java.util.Scanner;
 
 public class Cliente {
-
-    private Hotel hotel;
-    private Scanner sc;
+    Scanner sc = new Scanner(System.in);
     private String cedula;
     private String nombre;
-
-    public Cliente(Hotel hotel, Scanner sc) {
-        this.hotel = hotel;
-        this.sc = sc;
-    }
 
     private void registrar() {
         System.out.println("\n--- REGISTRO DE CLIENTE ---");
@@ -27,7 +20,7 @@ public class Cliente {
 
         System.out.print("Ingrese su nombre: ");
         nombre = sc.nextLine();
-        while (nombre.equals("")) {
+        while (nombre=="") {
             System.out.println("El nombre no puede estar vacío.");
             System.out.print("Ingrese su nombre: ");
             nombre = sc.nextLine();
@@ -53,7 +46,7 @@ public class Cliente {
 
             switch (opcion) {
                 case 1:
-                    hotel.mostrarHabitaciones(true);
+                    System.out.println("Habitaciones disponibles: (pendiente)");
                     break;
                 case 2:
                     System.out.println("Hacer reserva (pendiente)");
