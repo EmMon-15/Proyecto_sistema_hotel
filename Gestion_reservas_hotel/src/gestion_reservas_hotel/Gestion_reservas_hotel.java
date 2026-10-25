@@ -9,10 +9,11 @@ public class Gestion_reservas_hotel {
         
         Scanner sc = new Scanner(System.in);
         int seleccion;
+        
         do {
             System.out.println("\n=== SISTEMA DE RESERVAS DEL HOTEL ===");
             System.out.println("Ingrese tipo de usuario:\n<1> Usuario cliente.\n<2> Usuario personal.\n<3> Salir del programa.");
-            seleccion = sc.nextInt(); sc.nextLine();
+            seleccion = Input.ent();
 
             switch (seleccion) {
                 case 3: 

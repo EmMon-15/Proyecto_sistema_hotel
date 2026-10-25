@@ -1,9 +1,6 @@
 package gestion_reservas_hotel;
 
-import java.util.Scanner;
-
 public class Cliente {
-    Scanner sc = new Scanner(System.in);
     private String cedula;
     private String nombre;
 
@@ -11,19 +8,19 @@ public class Cliente {
         System.out.println("\n--- REGISTRO DE CLIENTE ---");
 
         System.out.print("Ingrese su cédula (10 dígitos): ");
-        cedula = sc.nextLine();
+        cedula = Input.str();
         while (cedula.length() != 10) {
             System.out.println("Cédula inválida, debe tener 10 dígitos.");
             System.out.print("Ingrese su cédula (10 dígitos): ");
-            cedula = sc.nextLine();
+            cedula = Input.str();
         }
 
         System.out.print("Ingrese su nombre: ");
-        nombre = sc.nextLine();
-        while (nombre=="") {
+        nombre = Input.str();
+        while (nombre.equals(null)) {
             System.out.println("El nombre no puede estar vacío.");
             System.out.print("Ingrese su nombre: ");
-            nombre = sc.nextLine();
+            nombre = Input.str();
         }
 
         System.out.println("¡Bienvenido/a, " + nombre + "!");
@@ -42,7 +39,7 @@ public class Cliente {
             System.out.println("<4> Cancelar una reserva");
             System.out.println("<0> Volver");
 
-            opcion = Integer.parseInt(sc.nextLine());
+            opcion = Input.ent();
 
             switch (opcion) {
                 case 1:

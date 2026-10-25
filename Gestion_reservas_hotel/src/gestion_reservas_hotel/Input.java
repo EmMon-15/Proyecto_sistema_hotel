@@ -10,15 +10,66 @@ public class Input {
         return cadena;
     }
     
-    public static String str(int max){
+    public static String str(int limite, boolean maximo){
         String cadena;
         do {
             cadena = sc.nextLine();
-            if (cadena.length() <= max) {
-                return cadena;
+            if (maximo) {
+                if (cadena.length() <= limite) {
+                    return cadena;
+                } else {
+                    System.out.printf("Cantidad de caracteres introducidos ha superado el limite (%d caracter/es).", limite);
+                }
             } else {
-                System.out.printf("Cantidad de caracteres introducidos ha superado el limite (%d caracter/es).", max);
-                System.out.print(max);
+                if (cadena.length() >= limite) {
+                    return cadena;
+                } else {
+                    System.out.printf("Cantidad de caracteres introducidos debe ser mayor que %d caracter/es.", limite);
+                }
+            }
+        } while (true);
+    }
+    
+    public static String str(int min, int max){
+        String cadena;
+        do {
+            cadena = sc.nextLine();
+            if (cadena.length() < min) {
+                System.out.printf("Cantidad de caracteres introducidos no supera el minimo (%d caracter/es).", min);
+            } else if (cadena.length() > max) {
+                System.out.printf("Cantidad de caracteres introducidos ha superado el maximo (%d caracter/es).", max);
+            } else {
+                return cadena;
+            }
+        } while (true);
+    }
+    
+    public static int ent() {
+        String strNumero;
+        int entero;
+        
+        do {
+            strNumero = sc.nextLine();
+            try {
+                entero = Integer.parseInt(strNumero);
+                return entero;
+            } catch (NumberFormatException e) {
+                System.out.print("Formato incorrecto, necesita introducir un numero entero: ");
+            }
+        } while (true);
+    }
+    
+    public static double dec() {
+        String strNumero;
+        double decimal;
+        
+        do {
+            strNumero = sc.nextLine();
+            try {
+                decimal = Double.parseDouble(strNumero);
+                return decimal;
+            } catch (NumberFormatException e) {
+                System.out.print("Formato incorrecto, necesita introducir un numero decimal: ");
             }
         } while (true);
     }
