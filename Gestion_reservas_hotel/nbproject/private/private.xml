@@ -4,13 +4,16 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Gestion_reservas_hotel.java</file>
-            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Cliente.java</file>
-            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Habitacion.java</file>
-            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Empleado.java</file>
-            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Input.java</file>
             <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Usuario.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Cliente.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Personal.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/GestionUsuarios.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Habitacion.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Registro.java</file>
             <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/GestionReservas.java</file>
             <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Reservar.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/Input.java</file>
+            <file>file:/C:/Users/emanu/Downloads/Proyecto_sistema_hotel-main/Proyecto_sistema_hotel-main/Gestion_reservas_hotel/src/gestion_reservas_hotel/DateFormat.java</file>
         </group>
     </open-files>
 </project-private>

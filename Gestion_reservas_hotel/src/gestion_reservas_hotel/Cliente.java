@@ -1,65 +1,63 @@
+
 package gestion_reservas_hotel;
+import java.util.ArrayList;
 
-public class Cliente {
-    private String cedula;
-    private String nombre;
-
-    private void registrar() {
-        System.out.println("\n--- REGISTRO DE CLIENTE ---");
-
-        System.out.print("Ingrese su cédula (10 dígitos): ");
-        cedula = Input.str();
-        while (cedula.length() != 10) {
-            System.out.println("Cédula inválida, debe tener 10 dígitos.");
-            System.out.print("Ingrese su cédula (10 dígitos): ");
-            cedula = Input.str();
-        }
-
-        System.out.print("Ingrese su nombre: ");
-        nombre = Input.str();
-        while (nombre.equals(null)) {
-            System.out.println("El nombre no puede estar vacío.");
-            System.out.print("Ingrese su nombre: ");
-            nombre = Input.str();
-        }
-
-        System.out.println("¡Bienvenido/a, " + nombre + "!");
+public class Cliente extends Usuario implements Reservar {
+    private double creditos;
+    private ArrayList<Registro> registroUsuario = new ArrayList<>(); 
+    
+    public Cliente() {
+        super();
+        this.creditos = 0;
+    }
+    
+    public void agregarRegistro(Registro nuevoRegistro) {
+        registroUsuario.add(nuevoRegistro);
     }
 
-    public void mostrarMenu() {
-        registrar();
+    public double getCreditos() {
+        return creditos;
+    }
 
-        int opcion;
+    public void setCreditos(double creditos) {
+        this.creditos = creditos;
+    }
 
-        do {
-            System.out.println("\n--- MENÚ CLIENTE ---");
-            System.out.println("<1> Ver habitaciones disponibles");
-            System.out.println("<2> Hacer una reserva");
-            System.out.println("<3> Ver mis reservas");
-            System.out.println("<4> Cancelar una reserva");
-            System.out.println("<0> Volver");
-
-            opcion = Input.ent();
-
-            switch (opcion) {
-                case 1:
-                    System.out.println("Habitaciones disponibles: (pendiente)");
-                    break;
-                case 2:
-                    System.out.println("Hacer reserva (pendiente)");
-                    break;
-                case 3:
-                    System.out.println("Mis reservas (pendiente)");
-                    break;
-                case 4:
-                    System.out.println("Cancelar reserva (pendiente)");
-                    break;
-                case 0:
-                    System.out.println("Volviendo al menú principal...");
-                    break;
-                default:
-                    System.out.println("Opción inválida, intente de nuevo.");
+    @Override
+    public Registro reservarHabitacion(int habitacion, int dias) {
+        if (dias > 0) {
+            String razon = "Reservar Habitacion";
+            if (GestionReservas.disponibilidad(habitacion)) {
+                Registro nuevaReserva = new Registro(getCedula(), getCedula(), razon, habitacion, dias);
+                agregarRegistro(nuevaReserva);
+                return nuevaReserva;
             }
-        } while (opcion != 0);
+        } else {
+            System.out.println("La cantidad de días debe de ser mayor o igual a 1.");
+        }
+        return null;
+    }
+    
+    @Override
+    public int cancelarHabitacion(int habitacionSeleccionada, String razon) {
+        for (Registro registroUsuario: registroUsuario) {
+            if (!registroUsuario.getEstadoReserva() && registroUsuario.getNumHabitacion() == habitacionSeleccionada) {
+                registroUsuario.setNota(razon);
+                registroUsuario.inhabilitarReserva();
+                return habitacionSeleccionada;
+            } else {
+                System.out.print("Habitacion no valida.");
+            }
+        }
+        return -1;
+    }
+    
+    @Override
+    public void mostrarUsuario() {
+        System.out.println("-------------------------");
+        System.out.printf("\tNombre: %s\n", super.getNombre());
+        System.out.printf("\tCedula: %s\n", super.getCedula());
+        System.out.printf("\tCreditos: %2f\n", getCreditos());
+        System.out.println("-------------------------");
     }
 }

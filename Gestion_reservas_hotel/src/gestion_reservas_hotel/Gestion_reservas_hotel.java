@@ -1,14 +1,13 @@
 
 package gestion_reservas_hotel;
 
-import java.util.Scanner;
-
 public class Gestion_reservas_hotel {
 
     public static void main(String[] args) {
         
-        Scanner sc = new Scanner(System.in);
         int seleccion;
+        
+        System.out.printf("%40s\n", "Habitaciones existentes");
         
         do {
             System.out.println("\n=== SISTEMA DE RESERVAS DEL HOTEL ===");
@@ -20,8 +19,7 @@ public class Gestion_reservas_hotel {
                     System.out.println("Gracias por usar el sistema. ¡Hasta luego!");
                     break;
                 case 1:
-                    Cliente cliente = new Cliente();
-                    cliente.mostrarMenu();
+                    
                     break;
                 case 2:
                     
