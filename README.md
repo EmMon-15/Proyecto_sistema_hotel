@@ -1,6 +1,7 @@
 SISTEMA DE GESTION DE RESERVAS DE HOTEL
 
 DESCRIPCION DEL PROYECTO
+
 Aplicación de consola desarrollada en Java para administrar las reservas de un hotel. 
 Incluye dos tipos de usuario (cliente y personal del hotel que está por jerarquía de niveles --> [0 administrador, 1 gerente, 2 recepción]), 
 manejo de habitaciones, registro de reservas-clientes y un sistema de créditos (puntos) para los clientes. Todos los usuarios tienen nombre, 
