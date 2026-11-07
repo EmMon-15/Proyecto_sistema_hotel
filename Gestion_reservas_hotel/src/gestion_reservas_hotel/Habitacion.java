@@ -1,4 +1,3 @@
-
 package gestion_reservas_hotel;
 
 public class Habitacion {
@@ -10,10 +9,11 @@ public class Habitacion {
     private String cedulaOcupante;
     
     public Habitacion() {
-        this.numHabitacion = this.numLlamadas;
-        this.tipo = null;
+        this.numHabitacion = numLlamadas;
+        this.tipo = "Sin definir";
+        this.desc = "Sin definir";
         this.desocupado = true;
-        cedulaOcupante = "0000000000";
+        this.cedulaOcupante = Usuario.SIN_CEDULA;
     }
     
     public static void aumentarHabitacion() {
@@ -65,18 +65,22 @@ public class Habitacion {
         String estado = (getEstadoHabitacion())? "Desocupado" : "Ocupado";
         System.out.printf("Habitacion #%d ----------\n", getNumHabitacion());
         System.out.printf("\tTipo: %s\n", getTipo());
-        System.out.printf("\tDescripcion: %s\n", getDesc());
-        System.out.printf("\tEstado: %s\n", estado);
+        System.out.printf("Descripcion: %s\n", getDesc());
+        System.out.printf("Estado: %s\n", estado);
         System.out.println("-------------------------");
     }
     
     public void mostrarTodaHabitacion() {
         String estado = (getEstadoHabitacion())? "Desocupado" : "Ocupado";
-        System.out.printf("Habitacion #%d ----------\n", getNumHabitacion());
+        System.out.printf("Habitacion <%d> ----------\n", getNumHabitacion());
         System.out.printf("\tTipo: %s\n", getTipo());
-        System.out.printf("\tDescripcion: %s\n", getDesc());
-        System.out.printf("\tEstado: %s\n", estado);
-        GestionUsuarios.mostrarDatosUsuarios(cedulaOcupante);
+        System.out.printf("Descripcion: %s\n", getDesc());
+        System.out.printf("Estado: %s\n", estado);
+        if (cedulaOcupante.equals(Usuario.SIN_CEDULA)) {
+            System.out.println("Ocupante: ninguno");
+        } else {
+            GestionUsuarios.mostrarDatosUsuarios(cedulaOcupante);
+        }
         System.out.println("-------------------------");
     }
 }

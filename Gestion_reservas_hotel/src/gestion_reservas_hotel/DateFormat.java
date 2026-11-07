@@ -1,30 +1,20 @@
-
 package gestion_reservas_hotel;
 import java.util.Calendar;
 import java.text.SimpleDateFormat;
 
 public class DateFormat {
-    static private SimpleDateFormat formato = new SimpleDateFormat(" yyyy/MM/dd - HH:mm:ss");
-    private Calendar diaSistema;
-    
-    public static void actualizarDia(Calendar diaSistema) {
-        diaSistema = Calendar.getInstance();
-    }
+    private static final String PATRON = " yyyy/MM/dd - HH:mm:ss";
     
     public static String formatoFecha() {
-        Calendar fecha = Calendar.getInstance();
-        String fechaFormateada = formato.format(fecha.getTime());
-        return fechaFormateada;
+        return formatoFecha(Calendar.getInstance());
     }
     
     public static String formatoFecha(Calendar fecha) {
-        String fechaFormateada = formato.format(fecha.getTime());
-        return fechaFormateada;
+        return new SimpleDateFormat(PATRON).format(fecha.getTime());
     }
     
     public static boolean compararFecha(Calendar fecha) {
         Calendar fechaDeHoy = Calendar.getInstance();
-        boolean aunHayTiempo = fechaDeHoy.before(fecha);
-        return aunHayTiempo;
+        return fechaDeHoy.before(fecha);
     }    
 }

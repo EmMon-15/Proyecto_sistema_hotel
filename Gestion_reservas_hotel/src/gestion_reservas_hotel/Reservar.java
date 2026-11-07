@@ -1,8 +1,7 @@
-
 package gestion_reservas_hotel;
 
 public interface Reservar {
-    public abstract Registro reservarHabitacion(int habitacion, int dia);
+    public abstract void reservarHabitacion(int habitacion, int dias);
     
-    public abstract int cancelarHabitacion(int habitacion, String razon);
+    public abstract void cancelarHabitacion(int habitacion, String razon);
 }
